@@ -1,5 +1,4 @@
-<script setup>
-import { Icon } from 'lucide-vue-next'
+<script setup lang="ts">
 
 const props = defineProps({
   background: String,

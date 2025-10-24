@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import github from '../assets/skills/github.svg'
-import linkdin from '../assets/svgs/linkdin.svg'
-import instagram from '../assets/svgs/instagram.svg'
 import { Github, Instagram, Linkedin } from 'lucide-vue-next'
 const isOpen = ref(false)
 
@@ -14,34 +11,71 @@ window.addEventListener('resize', () => {
   if (windowWidth.value >= 768) {
     isOpen.value = !isOpen.value
   } else {
-    isOpen.value = false // Always hide when switching to mobile
+    isOpen.value = false
   }
 })
+const navItems = [
+  {
+    title: 'Home',
+    href: '#home',
+  },
+  {
+    title: 'About',
+    href: '#about',
+  },
+  {
+    title: 'Skills',
+    href: '#skills',
+  },
+  {
+    title: 'Services',
+    href: '#services',
+  },
+
+  {
+    title: 'Projects',
+    href: '#projects',
+  },
+  {
+    title: 'Contacts',
+    href: '#contacts',
+  },
+]
+
+const socialItems = [
+  {
+    label: 'Github',
+    link: 'https://github.com/MOHAMEDMESKINE1',
+    icon: Github,
+  },
+  {
+    label: 'Linkedin',
+    link: 'https://www.linkedin.com/in/mohamed-meskine-173720180',
+    icon: Linkedin,
+  },
+  {
+    label: 'Instagram',
+    link: 'https://www.instagram.com/med_meskine1',
+    icon: Instagram,
+  },
+]
 </script>
 
 <template>
-  <header>
+  <header class="relative">
     <!-- Navbar -->
-    <nav class="bg-white fixed  border-gray-200 dark:bg-cyan-50 w-full z-20 top-0 left-0 nav">
+    <nav class="absolute w-full z-20 top-0 left-0">
       <div class="flex flex-wrap items-center justify-between mx-auto p-3">
         <a href="#home" class="flex items-center">
           <div class="h-10 flex gap-x-2 mx-5 self-center text-2xl font-semibold whitespace-nowrap">
-            <span>Med</span>
-            <span class="text-brown"> Meskine .</span>
+            <span class="text-brown">Med</span>
+            <span class="text-orange"> Meskine .</span>
           </div>
         </a>
-
         <div class="flex md:order-2">
-          
           <div class="mx-2 flex md:flex hidden gap-4">
-            <a href="https://github.com/MOHAMEDMESKINE1" target="_blank">
-              <Github class="w-4 h-4  md:w-5 md:h-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/mohamed-meskine-173720180" target="_blank">
-              <Linkedin class="w-4 h-4 md:w-5 md:h-5 " />
-            </a>
-            <a href="https://www.instagram.com/med_meskine1" target="_blank">
-              <Instagram class="w-4 h-4 md:w-5 md:h-5 " />
+            <a v-for="item in socialItems" :key="item.label" :href="item.link" target="_blank">
+              <component :is="item.icon" class="w-4 h-4 md:w-5 md:h-5" />
             </a>
           </div>
 
@@ -78,72 +112,13 @@ window.addEventListener('resize', () => {
           <ul
             class="flex flex-col uppercase font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
           >
-            <li>
+            <li v-for="navItem in navItems" :key="navItem.title">
               <a
-                href="#"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange md:p-0"
-                >Home</a
-              >
-            </li>
-
-            <li>
-              <a
-                href="#about"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange md:p-0"
-                >About</a
-              >
-            </li>
-
-            <li>
-              <a
-                href="#services"
+                :href="navItem.href"
                 class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange md:p-0"
               >
-                Services
+                {{ navItem.title }}
               </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange md:p-0"
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange md:p-0"
-              >
-                projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contacts"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange md:p-0"
-              >
-                contacts
-              </a>
-            </li>
-            
-            <li>
-              <!-- get appointement -->
-              <div class="md:hidden my-2">
-                <!-- <a href="#" type="button" class="text-white mx-2     w-full bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-700 font-medium rounded-md  text-sm px-6 p-3 text-center mr-3 md:mr-0 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">Download CV</a> -->
-                <!-- <Button>CONTACT NOW</Button> -->
-                <div class="mx-2 md:hidden flex gap-4">
-                  <a href="https://github.com/MOHAMEDMESKINE1" target="_blank">
-                    <img :src="github" alt="" class=" w-4 h-4 md:w-5 md:h-5 " />
-                  </a>
-                  <a href="https://www.linkedin.com/in/mohamed-meskine-173720180" target="_blank">
-                    <img :src="linkdin" alt="" class="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a href="https://www.instagram.com/med_meskine1" target="_blank">
-                    <img :src="instagram" alt="" class="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                </div>
-              </div>
             </li>
           </ul>
         </div>
@@ -155,5 +130,11 @@ window.addEventListener('resize', () => {
 <style lang="css" scoped>
 * {
   scroll-behavior: smooth;
+}
+:root {
+  --color-1: #1e293b;
+  --color-2: #f6dc7d;
+  --color-3: #373737;
+  --color-4: #d74f11;
 }
 </style>

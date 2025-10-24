@@ -7,11 +7,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="w-full max-w-2xl">
+  <div class="w-full max-w-2xl h-full">
     <div
       :class="[
         props.background,
-        'border border-dark p-6 sm:p-8 md:p-10  flex flex-col ',
+        'border border-dark p-6 sm:p-8 md:p-10  flex flex-col h-full ',
         'hover:shadow-[1px_1px_rgba(0,0,0),1px_1px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),2px_2px_0px_0px_rgba(0,0,0)]',
       ]"
     >
