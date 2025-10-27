@@ -18,7 +18,7 @@ window.addEventListener('resize', () => {
 const navItems = [
   {
     title: 'navbar.home',
-    href: '/',
+    href: '/#home',
   },
   {
     title: 'navbar.about',
