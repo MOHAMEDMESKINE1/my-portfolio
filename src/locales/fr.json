@@ -12,9 +12,9 @@
         "demo": "Voir démo"
     },
     "hero": {
-        "im": "Je suis",
+        "im": "Je suis un ",
         "greeting": "Salut, je suis Mohamed",
-        "description": "Je suis développeur Full Stack !",
+        "description": "Je suis un développeur Full Stack !",
         "job": "développeur Full Stack !",
         "based": "Basé à Agadir, Maroc"
     },
@@ -49,6 +49,10 @@
             "description": "Dawarat est une plateforme web innovante dédiée à la gestion des sessions et réunions d’une municipalité. Elle offre une solution complète pour planifier, organiser et suivre les sessions, questions, notes, réunions et sections de manière centralisée."
         },
         "poject3": {
+            "name": "Dawarat",
+            "description": "Dawarat est une plateforme web innovante dédiée à la gestion des sessions et réunions de la municipalité. Elle offre une solution complète pour planifier, organiser et suivre les sessions, questions, notes, réunions et sections de manière centralisée."
+        },
+        "poject4": {
             "name": "Película",
             "description": "Película est une plateforme web permettant de découvrir et parcourir des films. Elle utilise l’API IMDb pour fournir des informations complètes sur les films, séries et acteurs, ainsi qu’une recherche avancée pour un accès rapide au contenu."
         }

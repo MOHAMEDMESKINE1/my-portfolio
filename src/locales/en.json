@@ -53,6 +53,11 @@
 
         },         
         "poject3":{
+            "name":"Dawarat",
+            "description":" Dawarat is an innovative web platform dedicated to managing the sessions and meetings of the municipality. It provides a comprehensive solution to plan, organize, and track sessions, questions, notes, meetings, and sections in a centralized manner. "
+
+        },        
+        "poject4":{
             "name":"Pelicula",
             "description":"Película is a web platform for discovering and browsing movies. It leverages the IMDb API to provide comprehensive information on films, series, and actors. The platform also offers advanced search functionality."
 

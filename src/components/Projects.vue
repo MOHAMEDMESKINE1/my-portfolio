@@ -95,10 +95,10 @@ import Button from './ui/Button.vue'
 
       <div class="font-bold md:ms-5">
         <h1 class="text-4xl md:text-5xl my-5 capitalize">
-          {{ $t('projects.poject3.name') }}
+          {{ $t('projects.poject4.name') }}
         </h1>
         <p class="leading-loose">
-          {{ $t('projects.poject3.description') }}
+          {{ $t('projects.poject4.description') }}
         </p>
 
         <div class="py-3 flex gap-3">
