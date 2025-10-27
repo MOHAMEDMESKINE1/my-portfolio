@@ -3,7 +3,9 @@ import Button from './ui/Button.vue'
 </script>
 
 <template>
-  <div class="bg-white p-5" id="projects">
+  <div class="">
+  </div>
+  <div class="  bg-white p-5" id="projects">
     <h1 class="text-center uppercase text-3xl md:text-4xl py-5">latest projects</h1>
 
     <div class="grid md:grid-cols-2 gap-y-2 md:gap-2 md:my-22">
@@ -110,3 +112,6 @@ import Button from './ui/Button.vue'
     </div>
   </div>
 </template>
+<style>
+
+</style>
