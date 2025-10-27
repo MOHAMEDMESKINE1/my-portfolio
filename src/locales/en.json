@@ -1,0 +1,75 @@
+{
+    "navbar" : {
+        "home" : "Home",
+        "about" : "About",
+        "skills" : "Skills",
+        "services" : "Services",
+        "projects" : "Projects",
+        "contacts" : "Contacts"
+    },
+    "button":{
+        "about" : "About me",
+        "demo" : "Live demo"
+    },
+    "hero" : {
+        "im" : "I'm",
+        "greeting" : "Hi, My name is Mohamed",
+        "description" : "I'm a fullstack developer !",
+        "job" : "fullstack developer !",
+        "based" : "based in Agadir, Morocco"
+    },
+    "about":{
+        "title":"Im a fullstack developer with +2 years of experience",
+        "description":"I’m a Full Stack Developer with over 2 years of experience building modern web applications. I specialize in JavaScript frameworks like Vue.js and Nuxt js, as well as backend development with Laravel. I enjoy turning ideas into efficient, scalable, and user-friendly digital solutions, and I’m always eager to learn and explore new technologies.",
+        "projects":"Projects Completed",
+        "clients" : "Happy Clients"
+    },
+    "services": {
+        "title": "Services",
+        "backend" : {
+            "title":"backend",
+            "description":"I develop powerful and secure backends using Laravel and Inertia.js, ensuring a smooth bridge between the frontend and server. My focus is on building scalable, and efficient user experiences."
+        },
+        "frontend": {
+            "title":"frontend",
+            "description":"I craft modern, dynamic, and visually appealing web interfaces using the latest front-end technologies. With Vue.js, Nuxt, and TailwindCSS, I build fast, responsive, and innovative user experiences ."
+
+        }
+       
+    },
+    "skills" :{
+        "title" : "Skills"
+    },
+    "projects": {
+        "title":"latest projects",
+        "poject1":{
+            "name":"marafiq",
+            "description":"Marafiq is a comprehensive web platform designed to simplify the management and booking of municipal equipment, theaters, and halls. The project was designed and developed to optimize scheduling, availability, and the administrative management of municipal resources."
+
+        },         
+        "poject2":{
+            "name":"bureau d'ordre",
+            "description":"Dawarat is an innovative web platform dedicated to managing the sessions and meetings of the municipality. It provides a comprehensive solution to plan, organize, and track sessions, questions, notes, meetings, and sections in a centralized manner."
+
+        },         
+        "poject3":{
+            "name":"Pelicula",
+            "description":"Película is a web platform for discovering and browsing movies. It leverages the IMDb API to provide comprehensive information on films, series, and actors. The platform also offers advanced search functionality."
+
+        }        
+    },
+    "footer" : {
+        "description" : "Full Stack Developer passionate about building high-performance and intuitive web experiences. Specialized in JavaScript technologies Vue.js and Laravel on the backend.",
+        "navigation": {
+            "title" : "Navigation",
+            "home" : "Home",
+            "about" : "About",
+            "skills" : "Skills",
+            "services" : "Services",
+            "projects" : "Projects",
+            "contacts" : "Contacts"
+            
+        },
+        "droits" : "All rights reserved"
+    }
+}

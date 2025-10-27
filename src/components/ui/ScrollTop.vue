@@ -28,7 +28,7 @@ onUnmounted(() => {
     <button
       v-show="isVisible"
       @click="scrollToTop"
-      class="fixed   bottom-6 right-6 p-3 rounded-full shadow-lg md:hover:scale-110 transition-all duration-300 bg-white text-dark border hover:bg-primary"
+      class="fixed   bottom-15 right-6 p-3 rounded-full shadow-lg md:hover:scale-110 transition-all duration-300 bg-white text-dark border hover:bg-primary"
     >
       <Mouse />
     </button>

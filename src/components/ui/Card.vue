@@ -24,7 +24,7 @@ const props = defineProps({
 
         <div class="flex flex-col justify-between flex-1">
           <div>
-            <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 leading-tight">
+            <h2 class="text-xl sm:text-2xl capitalize font-bold text-gray-900 mb-2 leading-tight">
               {{ props.title ?? '' }}
             </h2>
             <p class="text-sm sm:text-base text-gray-800 leading-relaxed">

@@ -65,16 +65,19 @@ const skills = [
     background: 'bg-white',
   },
 ]
+
 </script>
 
 <template>
-  <div id="skills">
-    <h1 class="text-center uppercase text-3xl md:text-4xl ms-4 py-2">my skills</h1>
-
+  
+  <div id="skills" class="relative bg-white text-dark overflow-hidden">
+    <h1 class="text-center uppercase text-3xl md:text-4xl ms-4 py-2"> {{ $t('skills.title') }}</h1>
+ 
     <!-- Responsive grid wrapper -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-5 md:items-start">
       <!-- 🧩 Left side: cards at top -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        
         <CardSkill
           v-for="skill in skills"
           :key="skill.title"

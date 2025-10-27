@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Github, Instagram, Linkedin } from 'lucide-vue-next'
+import LangSwitcher from './ui/LangSwitcher.vue'
 const isOpen = ref(false)
 
 const toggleNavbar = () => {
@@ -16,28 +17,28 @@ window.addEventListener('resize', () => {
 })
 const navItems = [
   {
-    title: 'Home',
-    href: '#home',
+    title: 'navbar.home',
+    href: '/',
   },
   {
-    title: 'About',
+    title: 'navbar.about',
     href: '#about',
   },
   {
-    title: 'Skills',
+    title: 'navbar.skills',
     href: '#skills',
   },
   {
-    title: 'Services',
+    title: 'navbar.services',
     href: '#services',
   },
 
   {
-    title: 'Projects',
+    title: 'navbar.projects',
     href: '#projects',
   },
   {
-    title: 'Contacts',
+    title: 'navbar.contacts',
     href: '#contacts',
   },
 ]
@@ -64,7 +65,7 @@ const socialItems = [
 <template>
   <header class="relative">
     <!-- Navbar -->
-    <nav class="absolute w-full z-20 top-0 left-0">
+    <nav class="absolute bg-white w-full z-20 top-0 left-0">
       <div class="flex flex-wrap items-center justify-between mx-auto p-3">
         <a href="#home" class="flex items-center">
           <div class="h-10 flex gap-x-2 mx-5 self-center text-2xl font-semibold whitespace-nowrap">
@@ -73,8 +74,12 @@ const socialItems = [
           </div>
         </a>
         <div class="flex md:order-2">
-          <div class="mx-2 flex md:flex hidden gap-4">
-            <a v-for="item in socialItems" :key="item.label" :href="item.link" target="_blank">
+          <div class="mx-2 flex md:flex items-center hidden gap-4">
+            <LangSwitcher class="hidden" />
+            <a v-for="item in socialItems" 
+            :key="item.label" 
+            :href="item.link" 
+            target="_blank">
               <component :is="item.icon" class="w-4 h-4 md:w-5 md:h-5" />
             </a>
           </div>
@@ -109,17 +114,20 @@ const socialItems = [
           ]"
           id="navbar-cta"
         >
+       
           <ul
-            class="flex flex-col uppercase font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+            class="flex bg-white  items-center flex-col uppercase font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
           >
             <li v-for="navItem in navItems" :key="navItem.title">
               <a
                 :href="navItem.href"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange md:p-0"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:text-orange md:hover:bg-transparent md:hover:text-orange md:p-0"
               >
-                {{ navItem.title }}
+                {{ $t(navItem.title) }}
               </a>
             </li>
+            
+            <LangSwitcher class="md:hidden" />
           </ul>
         </div>
       </div>
@@ -131,10 +139,5 @@ const socialItems = [
 * {
   scroll-behavior: smooth;
 }
-:root {
-  --color-1: #1e293b;
-  --color-2: #f6dc7d;
-  --color-3: #373737;
-  --color-4: #d74f11;
-}
+
 </style>

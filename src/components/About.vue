@@ -9,14 +9,13 @@ import about from '@/assets/svgs/about.svg'
       <img :src="about" />
     </div>
 
-    <div class="font-bold capitalize ms-5">
-      <h1 class="text-2xl md:text-3xl">Im a fullstack developer with +2 years of experience</h1>
+    <div class="font-bold  ms-5">
+      <h1 class="text-2xl md:text-3xl">{{ $t('about.title') }}</h1>
+
       <p class="mt-3 text-justify">
-        I’m a Full Stack Developer with over 2 years of experience building modern web applications.
-        I specialize in JavaScript frameworks like Vue.js and Nuxt js, as well as backend
-        development with Laravel. I enjoy turning ideas into efficient, scalable, and user-friendly
-        digital solutions, and I’m always eager to learn and explore new technologies.
+        {{ $t('about.description') }}
       </p>
+
       <div class="flex mt-5 justify-between max-w-md">
         <div>
           <h2 class="text-orange text-2xl font-bold">
@@ -30,8 +29,9 @@ import about from '@/assets/svgs/about.svg'
               class-name="count-up-text"
             />
           </h2>
-          <p>Projects Completed</p>
+          <p>{{ $t('about.projects') }}</p>
         </div>
+
         <div>
           <h2 class="text-orange text-2xl font-bold">
             +<CountUp
@@ -44,7 +44,7 @@ import about from '@/assets/svgs/about.svg'
               class-name="count-up-text"
             />
           </h2>
-          <p>Happy Clients</p>
+          <p>{{ $t('about.clients') }}</p>
         </div>
       </div>
     </div>
