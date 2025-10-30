@@ -22,28 +22,28 @@ const socialItems = [
 const navItems = [
   {
     title: 'navbar.home',
-    href: '#home',
+    href: 'home',
   },
   {
     title: 'navbar.about',
-    href: '#about',
+    href: 'about',
   },
   {
     title: 'navbar.skills',
-    href: '#skills',
+    href: 'skills',
   },
   {
     title: 'navbar.services',
-    href: '#services',
+    href: 'services',
   },
 
   {
     title: 'navbar.projects',
-    href: '#projects',
+    href: 'projects',
   },
   {
     title: 'navbar.contacts',
-    href: '#contacts',
+    href: 'contacts',
   },
 ]
 </script>
@@ -75,7 +75,7 @@ const navItems = [
     
     <div class="flex flex-col gap-4 mt-2">
       <h1 class="text-white">Mohamed Meskine</h1>
-      <p class="text-sm text-justify">
+      <p class="text-sm   text-justify">
         {{ $t('footer.description') }}
       </p>
 
@@ -86,12 +86,13 @@ const navItems = [
       </div>
     </div>
 
-    <div class="flex flex-col gap-4 mt-2 capitalize">
-      <h1 class="text-white">navigation</h1>
-      <ul class="flex flex-col gap-2 md:gap-4">
+    <div class="grid grid-cols-2 gap-0 md:gap-32 ">
+      <div class="flex flex-col gap-4 mt-2 capitalize">
+      <h1 class="text-orange">navigation</h1>
+      <ul class="grid   md:gap-4">
         <li v-for="navItem in navItems" :key="navItem.title">
           <a
-            :href="navItem.href"
+            :href="'#'+navItem.href"
             class="block py-2 md:pl-3 pr-4 text-white rounded hover:text-orange md:hover:bg-transparent md:hover:text-orange md:p-0"
           >
             {{ $t(navItem.title) }}
@@ -101,24 +102,35 @@ const navItems = [
     </div>
 
     <div class="flex flex-col gap-4 mt-2">
-      <h1 class="text-white ">{{$t('navbar.contacts')}}</h1>
+      <h1 class="text-orange">{{$t('navbar.contacts')}}</h1>
       <ul class="flex flex-col gap-4">
         <li>+212704282927</li>
-        <li>meskinemohameddev@gmail.com</li>
+        <li>
+          meskinemohamed
+          dev@gmail.com
+        </li>
         <li>Agadir, Morocco</li>
       </ul>
+    </div>
     </div>
 
   </div>
 
   <!-- Bottom Bar -->
-  <div class="relative z-10 bg-white text-dark flex items-center justify-center py-2 gap-1">
-    <p>© {{ new Date().getFullYear() }} Mohamed Meskine</p>
-    <Heart class="w-4 h-4" />
-    <p>. {{ $t('footer.droits') }}.</p>
-  </div>
+ 
 
 </div>
+ <div class=" bg-white  text-dark flex justify-center py-1 md:gap-4 items-center ">
+    
+      <p >
+        © {{ new Date().getFullYear() }} Mohamed Meskine 
+      </p>
+      <span class="text-center mx-1 ">  
+        <Heart class="w-4 h-4" />
+      </span>
+      <p>{{ $t('footer.droits')}}</p>
+   
+  </div>
 
  </template>
 

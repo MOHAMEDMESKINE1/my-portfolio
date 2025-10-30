@@ -1,73 +1,73 @@
 {
-    "navbar": {
-        "home": "Accueil",
-        "about": "À propos",
-        "skills": "Competences",
-        "services": "Services",
-        "projects": "Projets",
-        "contacts": "Contacts"
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Competences",
+    "services": "Services",
+    "projects": "Projets",
+    "contacts": "Contacts"
+  },
+  "button": {
+    "about": "À propos de moi",
+    "demo": "Voir démo"
+  },
+  "hero": {
+    "im": "Je suis un ",
+    "greeting": "Salut, je suis Mohamed",
+    "description": "Je suis un développeur Full Stack !",
+    "job": "développeur Full Stack !",
+    "based": "Basé à Agadir, Maroc"
+  },
+  "about": {
+    "title": "Développeur Full Stack avec plus de 2 ans d'expérience",
+    "description": "Je suis un développeur Full Stack avec plus de 2 ans d’expérience dans la création d’applications web modernes. Je maîtrise les frameworks JavaScript tels que Vue.js et Nuxt.js, ainsi que le développement backend avec Laravel. J’aime transformer les idées en solutions digitales efficaces, évolutives et orientées utilisateur, tout en restant constamment à l’affût des nouvelles technologies.",
+    "projects": "Projets réalisés",
+    "clients": "Clients satisfaits"
+  },
+  "services": {
+    "title": "Services",
+    "backend": {
+      "title": "Backend",
+      "description": "Je développe des backends performants et sécurisés avec Laravel et Inertia.js, garantissant une parfaite communication entre le frontend et le serveur. Mon objectif est de construire des solutions évolutives pour une expérience utilisateur fluide."
     },
-    "button": {
-        "about": "À propos de moi",
-        "demo": "Voir démo"
-    },
-    "hero": {
-        "im": "Je suis un ",
-        "greeting": "Salut, je suis Mohamed",
-        "description": "Je suis un développeur Full Stack !",
-        "job": "développeur Full Stack !",
-        "based": "Basé à Agadir, Maroc"
-    },
-    "about": {
-        "title": "Développeur Full Stack avec plus de 2 ans d'expérience",
-        "description": "Je suis un développeur Full Stack avec plus de 2 ans d’expérience dans la création d’applications web modernes. Je maîtrise les frameworks JavaScript tels que Vue.js et Nuxt.js, ainsi que le développement backend avec Laravel. J’aime transformer les idées en solutions digitales efficaces, évolutives et orientées utilisateur, tout en restant constamment à l’affût des nouvelles technologies.",
-        "projects": "Projets réalisés",
-        "clients": "Clients satisfaits"
-    },
-    "services": {
-        "title": "Services",
-        "backend": {
-            "title": "Backend",
-            "description": "Je développe des backends performants et sécurisés avec Laravel et Inertia.js, garantissant une parfaite communication entre le frontend et le serveur. Mon objectif est de construire des solutions évolutives pour une expérience utilisateur fluide."
-        },
-        "frontend": {
-            "title": "Frontend",
-            "description": "Je conçois des interfaces web modernes, dynamiques et visuellement attrayantes grâce aux technologies les plus récentes. Avec Vue.js, Nuxt et TailwindCSS, j’assure des applications rapides, responsives et innovantes."
-        }
-    },
-     "skills" :{
-        "title" : "Compétences"
-    },
-    "projects": {
-        "title": "Derniers projets",
-        "poject1": {
-            "name": "Marafiq",
-            "description": "Marafiq est une plateforme web complète conçue pour simplifier la gestion et la réservation des équipements municipaux, salles et théâtres. Elle optimise la planification, la disponibilité et la gestion administrative des ressources municipales."
-        },
-        "poject2": {
-            "name": "Bureau d'Ordre",
-            "description": "Dawarat est une plateforme web innovante dédiée à la gestion des sessions et réunions d’une municipalité. Elle offre une solution complète pour planifier, organiser et suivre les sessions, questions, notes, réunions et sections de manière centralisée."
-        },
-        "poject3": {
-            "name": "Dawarat",
-            "description": "Dawarat est une plateforme web innovante dédiée à la gestion des sessions et réunions de la municipalité. Elle offre une solution complète pour planifier, organiser et suivre les sessions, questions, notes, réunions et sections de manière centralisée."
-        },
-        "poject4": {
-            "name": "Película",
-            "description": "Película est une plateforme web permettant de découvrir et parcourir des films. Elle utilise l’API IMDb pour fournir des informations complètes sur les films, séries et acteurs, ainsi qu’une recherche avancée pour un accès rapide au contenu."
-        }
-    },
-    "footer": {
-        "description": "Développeur Full Stack passionné par la création d’expériences web performantes et intuitives. Spécialisé dans les technologies JavaScript Vue.js et Laravel pour le backend.",
-        "navigation": {
-            "title": "Navigation",
-            "home": "Accueil",
-            "about": "À propos",
-            "skills": "Compétences",
-            "services": "Services",
-            "projects": "Projets",
-            "contacts": "Contacts"
-        },
-        "droits": "Tous droits reservés"
+    "frontend": {
+      "title": "Frontend",
+      "description": "Je conçois des interfaces web modernes, dynamiques et visuellement attrayantes grâce aux technologies les plus récentes. Avec Vue.js, Nuxt et TailwindCSS, j’assure des applications rapides, responsives et innovantes."
     }
+  },
+  "skills": {
+    "title": "Compétences"
+  },
+  "projects": {
+    "title": "Derniers projets",
+    "poject1": {
+      "name": "Marafiq",
+      "description": "Marafiq est une plateforme web complète conçue pour simplifier la gestion et la réservation des équipements municipaux, salles et théâtres. Elle optimise la planification, la disponibilité et la gestion administrative des ressources municipales."
+    },
+    "poject2": {
+      "name": "Bureau d'Ordre",
+      "description": "Conception et développement d'une plateforme web complète pour la gestion du courrier administratif (entrant et sortant). La plateforme comprend des fonctionnalités pour la réception, l'enregistrement, l'affectation et le suivi des lettres. Les rôles des utilisateurs et les permissions d'accès sont entièrement gérés pour différents profils."
+    },
+    "poject3": {
+      "name": "Dawarat",
+      "description": "Dawarat est une plateforme web innovante dédiée à la gestion des sessions et réunions de la municipalité. Elle offre une solution complète pour planifier, organiser et suivre les sessions, questions, notes, réunions et sections de manière centralisée."
+    },
+    "poject4": {
+      "name": "Película",
+      "description": "Película est une plateforme web permettant de découvrir et parcourir des films. Elle utilise l’API IMDb pour fournir des informations complètes sur les films, séries et acteurs, ainsi qu’une recherche avancée pour un accès rapide au contenu."
+    }
+  },
+  "footer": {
+    "description": "Développeur Full Stack passionné par la création d’expériences web performantes et intuitives. Spécialisé dans les technologies JavaScript Vue.js et Laravel pour le backend.",
+    "navigation": {
+      "title": "Navigation",
+      "home": "Accueil",
+      "about": "À propos",
+      "skills": "Compétences",
+      "services": "Services",
+      "projects": "Projets",
+      "contacts": "Contacts"
+    },
+    "droits": "Tous droits reservés"
+  }
 }
