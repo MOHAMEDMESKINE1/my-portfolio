@@ -71,9 +71,9 @@ const navItems = [
   </div>
 
   <!-- Footer Content -->
-  <div class=" z-10 justify-center gap-6 md:gap-22 p-5 grid grid-cols-1 md:grid-cols-3">
+  <div class="  z-10 justify-center gap-6 md:gap-22 p-5 grid grid-cols-1 md:grid-cols-3">
     
-    <div class="flex flex-col gap-4 mt-2">
+    <div class="relative flex flex-col gap-4 mt-2">
       <h1 class="text-white">Mohamed Meskine</h1>
       <p class="text-sm   text-justify">
         {{ $t('footer.description') }}
@@ -81,37 +81,37 @@ const navItems = [
 
       <div class="flex gap-4">
         <a v-for="item in socialItems" :key="item.label" :href="item.link" target="_blank">
-          <component :is="item.icon" class="w-4 h-4  md:w-5 md:h-5 hover:text-orange" />
+          <component :is="item.icon" class="w-5 h-5   hover:text-orange" />
         </a>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 gap-0 md:gap-32 ">
+    <div class="grid relative  md:grid-cols-2 grid-cols-none   gap-0 md:gap-32 ">
       <div class="flex flex-col gap-4 mt-2 capitalize">
-      <h1 class="text-orange">navigation</h1>
-      <ul class="grid   md:gap-4">
-        <li v-for="navItem in navItems" :key="navItem.title">
-          <a
-            :href="'#'+navItem.href"
-            class="block py-2 md:pl-3 pr-4 text-white rounded hover:text-orange md:hover:bg-transparent md:hover:text-orange md:p-0"
-          >
-            {{ $t(navItem.title) }}
-          </a>
-        </li>
-      </ul>
-    </div>
+        <h1 class="text-orange">navigation</h1>
+        
+        <ul class="grid grid-cols-1 gap-1 md:gap-4">
+          <li v-for="navItem in navItems" :key="navItem.title">
+            <a :href="`#${navItem.href}`" class="block py-2 md:pl-3 pr-4 text-white rounded hover:text-orange md:hover:bg-transparent md:hover:text-orange md:p-0">
+              {{ $t(navItem.title) }}
+            </a>
+          </li>
+        </ul>
 
-    <div class="flex flex-col gap-4 mt-2">
-      <h1 class="text-orange">{{$t('navbar.contacts')}}</h1>
-      <ul class="flex flex-col gap-4">
-        <li>+212704282927</li>
-        <li>
-          meskinemohamed
-          dev@gmail.com
-        </li>
-        <li>Agadir, Morocco</li>
-      </ul>
-    </div>
+        
+
+      </div>
+      <div class="flex flex-col gap-4 mt-2">
+        <h1 class="text-orange">{{$t('navbar.contacts')}}</h1>
+        <ul class="flex flex-col gap-4 ">
+          <li>+212704282927</li>
+          <li>
+          <p class=""> meskinemohameddev@gmail.com</p>
+          </li>
+        </ul>
+      </div>
+
+    
     </div>
 
   </div>
@@ -120,9 +120,9 @@ const navItems = [
  
 
 </div>
- <div class=" bg-white  text-dark flex justify-center py-1 md:gap-4 items-center ">
+ <div class=" bg-dark text-sm   text-white flex justify-center py-1 md:gap-4 items-center ">
     
-      <p >
+      <p>
         © {{ new Date().getFullYear() }} Mohamed Meskine 
       </p>
       <span class="text-center mx-1 ">  

@@ -120,7 +120,7 @@ const socialItems = [
           >
             <li v-for="navItem in navItems" :key="navItem.title">
               <a
-                :href="'#'+navItem.href"
+                :href="`#${navItem.href}`"
                 class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:text-orange md:hover:bg-transparent md:hover:text-orange md:p-0"
               >
                 {{ $t(navItem.title) }}

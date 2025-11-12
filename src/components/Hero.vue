@@ -60,8 +60,6 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
         />
       </h1>
 
-      <p>{{$t('hero.based')}}</p>
-
       <a href="#about" class="">
         <Button class="mx-5 w-62 md:mx-0 md:w-full"> {{ $t('button.about') }}</Button>
       </a>

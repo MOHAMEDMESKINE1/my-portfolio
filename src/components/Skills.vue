@@ -12,7 +12,7 @@ import php from '@/assets/skills/php.svg'
 import javascript from '@/assets/skills/javascript.svg'
 import wordpress from '@/assets/skills/wordpress.svg'
 import bootstrap from '@/assets/skills/bootstrap.svg'
-
+import skillsJson from "@/assets/lottfiles/skills.json"
 const skills = [
   {
     title: 'html',
@@ -89,7 +89,16 @@ const skills = [
 
       <!-- 🖼️ Right side: image -->
       <div class="flex justify-center md:justify-end hidden md:block">
-        <img :src="AboutSvg" alt="skills image" class="" />
+        <!-- <img :src="AboutSvg" alt="skills image" class="" /> -->
+            <lottie-player
+          :src="skillsJson"
+          background="transparent"
+          speed="1"
+          style="width:650px; height: 650px;"
+          loop
+          autoplay
+          class="md:-mt-28 "
+        />
       </div>
     </div>
   </div>

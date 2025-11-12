@@ -69,5 +69,10 @@
       "contacts": "Contacts"
     },
     "droits": "Tous droits reservés"
+  },
+  "notFound": {
+    "title": "404",
+    "description": "La page que vous cherchez n'existe pas.",
+    "back": "Accueil"
   }
 }

@@ -1,16 +1,27 @@
 <script setup lang="ts">
 import CountUp from '@/blocks/Animations/CountUp/CountUp.vue'
-import about from '@/assets/svgs/about.svg'
+// import about from '@/assets/svgs/about.svg';
+import about from '@/assets/lottfiles/about.json'
+import Loader from './ui/Loader.vue';
 </script>
 
 <template>
   <div class="grid md:grid-cols-2 gap-y-3 md:gap-2 my-5 p-5" id="about">
     <div class="hidden md:block">
-      <img :src="about" />
+      <!-- <img :src="about" /> -->
+        <lottie-player
+      :src="about"
+      background="transparent"
+      speed="1"
+      style="width:fit-content; height: fit-content; margin-top: -96px;"
+      loop
+      autoplay
+      class="md:-mx-32"
+    />
     </div>
-
-    <div class="font-bold  ms-5">
-      <h1 class="text-2xl md:text-3xl">{{ $t('about.title') }}</h1>
+    
+    <div class="font-bold md:mt-4 md:me-10 ">
+      <h1 class="text-xl  md:text-3xl">{{ $t('about.title') }}</h1>
 
       <p class="mt-3 text-justify">
         {{ $t('about.description') }}
