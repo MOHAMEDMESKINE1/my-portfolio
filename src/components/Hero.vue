@@ -30,7 +30,7 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
     </div>
 
     <!-- Image -->
-    <div class="order-1 md:order-2 mx-auto max-w-sm flex justify-center relative z-10">
+    <div class="order-1 md:order-2 mx-auto max-w-xs sm:max-w-sm flex justify-center relative z-10">
       <img
         src="../assets/image.png"
         class="mt-20 md:w-[400px] border-2 border-black object-cover rounded-full"
@@ -40,7 +40,7 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
 
     <!-- Text -->
     <div
-      class="order-2 md:order-1 text-center md:text-start flex flex-col gap-6 md:mt-44 relative z-10"
+      class="order-2 md:order-1 text-center md:text-start flex flex-col gap-6 md:mt-56 relative z-10"
     >
       <h1 class="text-xl uppercase">
         <!-- Hi, My name is Mohamed -->
@@ -48,7 +48,7 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
 
       </h1>
 
-      <h1 class="text-3xl md:text-4xl font-bold capitalize">
+      <h1 class="text-xl md:text-4xl font-bold capitalize">
         {{$t('hero.im')}}
         <TextType
           :text="[$t('hero.job'),'']"
@@ -57,6 +57,7 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
           :showCursor="true"
           cursorCharacter="|"
           :textColors="['#d74f11']"
+          class="inline-block whitespace-nowrap "
         />
       </h1>
 

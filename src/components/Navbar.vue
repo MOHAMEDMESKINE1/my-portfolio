@@ -127,7 +127,7 @@ const socialItems = [
               </a>
             </li>
             
-            <LangSwitcher class="md:hidden" />
+            <LangSwitcher class=" inline-block md:hidden" />
           </ul>
         </div>
       </div>
