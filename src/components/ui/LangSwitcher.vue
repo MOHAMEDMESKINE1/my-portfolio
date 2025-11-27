@@ -18,7 +18,7 @@ const focusedIndex = ref(-1)
 
 const toggle = () => {
   open.value = !open.value
-  if (open.value) focusedIndex.value = options.findIndex(o => o.code === locale.value)
+  if (open.value) focusedIndex.value = options.findIndex((o) => o.code === locale.value)
 }
 
 /* When user picks a language: set i18n locale + persist */
@@ -31,7 +31,7 @@ function selectLocale(code: string) {
 /* Initialize from localStorage if present */
 onMounted(() => {
   const saved = localStorage.getItem('locale')
-  if (saved && options.some(o => o.code === saved)) {
+  if (saved && options.some((o) => o.code === saved)) {
     locale.value = saved
   }
 })
@@ -62,7 +62,7 @@ function onKeydown(e: KeyboardEvent) {
       @click="toggle"
       :aria-expanded="open"
       aria-haspopup="menu"
-      class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border shadow-sm hover:shadow focus:outline-none    bg-white text-sm"
+      class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border shadow-sm hover:shadow focus:outline-none bg-white text-sm"
     >
       <Globe class="w-5 h-5" />
       <span class="min-w-[64px] text-left">
@@ -92,8 +92,8 @@ function onKeydown(e: KeyboardEvent) {
             @mouseenter="focusedIndex = idx"
             :class="[
               'w-full text-left px-3 py-2 text-sm flex items-center justify-between gap-2',
-              (opt.code === locale) ? 'font-semibold' : 'font-normal',
-              (focusedIndex === idx) ? 'bg-gray-100' : ''
+              opt.code === locale ? 'font-semibold' : 'font-normal',
+              focusedIndex === idx ? 'bg-gray-100' : '',
             ]"
             role="menuitem"
             :aria-current="opt.code === locale ? 'true' : 'false'"

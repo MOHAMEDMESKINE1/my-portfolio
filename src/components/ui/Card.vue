@@ -16,8 +16,7 @@ const props = defineProps({
       ]"
     >
       <!-- Wrapper changes layout by screen size -->
-      <div class="flex flex-col sm:flex-row items-start md:gap-6 flex-1 ">
-        
+      <div class="flex flex-col sm:flex-row items-start md:gap-6 flex-1">
         <!-- MOBILE layout: icon + title side by side -->
         <div class="flex sm:hidden items-center gap-3 w-full mb-3">
           <div

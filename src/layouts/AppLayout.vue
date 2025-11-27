@@ -4,8 +4,10 @@ import ScrollTop from '@/components/ui/ScrollTop.vue'
 </script>
 
 <template>
-  <div class="max-w-7xl mx-auto bg-white">
-    <slot />
+  <div class="bg-white">
+    <div class="">
+      <slot />
+    </div>
     <ScrollTop />
   </div>
 </template>

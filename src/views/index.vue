@@ -10,6 +10,7 @@ import Services from '@/components/Services.vue'
 import Skills from '@/components/Skills.vue'
 import AppLayout from '@/layouts/AppLayout.vue'
 import Loader from '@/components/ui/Loader.vue'
+import Partners from '@/components/Partners.vue'
 
 // Loader state
 const loading = ref(true)
@@ -27,7 +28,9 @@ onMounted(() => {
     <!-- Loader Screen -->
     <div v-if="loading">
       <transition name="fade">
-        <div class="fixed inset-0 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-50">
+        <div
+          class="fixed inset-0 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-50"
+        >
           <!-- <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_usmfx6bp.json" background="transparent"
             speed="1" style="width: 200px; height: 200px" loop autoplay></lottie-player>
           <p class="text-gray-600 dark:text-gray-300 mt-4">Loading...</p> -->
@@ -37,31 +40,34 @@ onMounted(() => {
       </transition>
     </div>
 
-
     <!-- Main Content -->
     <div v-else>
       <AppLayout>
-        <Navbar />
-        <Hero />
-        <section id="about">
-          <About />
-        </section>
-        <section id="services">
-          <Services />
-        </section>
-        <section id="skills">
-          <Skills />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="contacts">
-          <Contact />
-        </section>
+        <div class="max-w-7xl mx-auto">
+          <Navbar />
+          <Hero />
+          <section id="about">
+            <About />
+          </section>
+          <section id="services">
+            <Services />
+          </section>
+          <section id="skills">
+            <Skills />
+          </section>
+          <section id="projects">
+            <Projects />
+          </section>
+          <section>
+            <Partners />
+          </section>
+        </div>
       </AppLayout>
+      <section id="contacts">
+        <Contact />
+      </section>
     </div>
   </div>
-
 </template>
 
 <style scoped>

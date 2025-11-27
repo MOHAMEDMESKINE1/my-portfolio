@@ -10,12 +10,12 @@ import scrollAnimation from './directives/v-scroll-animation'
 
 const app = createApp(App)
 const i18n = createI18n({
-    locale: 'en',
-    fallbackLocale: 'en',
-    messages: {
-        en:en,
-        fr:fr,
-    },
+  locale: 'en',
+  fallbackLocale: 'en',
+  messages: {
+    en: en,
+    fr: fr,
+  },
 })
 app.use(router)
 app.use(i18n)

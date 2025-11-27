@@ -19,7 +19,7 @@ const cards = [
 <template>
   <div id="services">
     <h1 class="text-center uppercase text-3xl md:text-4xl">
-      {{ $t('services.title') }} 
+      {{ $t('services.title') }}
     </h1>
 
     <div class="grid md:grid-cols-2 gap-y-3 gap-2 p-5">

@@ -76,10 +76,7 @@ const socialItems = [
         <div class="flex md:order-2">
           <div class="mx-2 flex md:flex items-center hidden gap-4">
             <LangSwitcher class="hidden" />
-            <a v-for="item in socialItems" 
-            :key="item.label" 
-            :href="item.link" 
-            target="_blank">
+            <a v-for="item in socialItems" :key="item.label" :href="item.link" target="_blank">
               <component :is="item.icon" class="w-4 h-4 md:w-5 md:h-5" />
             </a>
           </div>
@@ -114,9 +111,8 @@ const socialItems = [
           ]"
           id="navbar-cta"
         >
-       
           <ul
-            class="flex bg-white  items-center flex-col uppercase font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+            class="flex bg-white items-center flex-col uppercase font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
           >
             <li v-for="navItem in navItems" :key="navItem.title">
               <a
@@ -126,8 +122,8 @@ const socialItems = [
                 {{ $t(navItem.title) }}
               </a>
             </li>
-            
-            <LangSwitcher class=" inline-block md:hidden" />
+
+            <LangSwitcher class="inline-block md:hidden" />
           </ul>
         </div>
       </div>
@@ -139,5 +135,4 @@ const socialItems = [
 * {
   scroll-behavior: smooth;
 }
-
 </style>

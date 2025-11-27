@@ -2,8 +2,6 @@
 import Button from './ui/Button.vue'
 import TextType from '@/blocks/TextAnimations/TextType/TextType.vue'
 import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
-
-
 </script>
 
 <template>
@@ -32,8 +30,8 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
     <!-- Image -->
     <div class="order-1 md:order-2 mx-auto max-w-xs sm:max-w-sm flex justify-center relative z-10">
       <img
-        src="../assets/image.png"
-        class="mt-20 md:w-[400px] border-2 border-black object-cover rounded-full"
+        src="../assets/me.png"
+        class="mt-20 md:w-[400px] bg-orange border-5 border-black object-cover rounded-full"
         alt="profile"
       />
     </div>
@@ -44,20 +42,19 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
     >
       <h1 class="text-xl uppercase">
         <!-- Hi, My name is Mohamed -->
-         {{$t('hero.greeting')}}
-
+        {{ $t('hero.greeting') }}
       </h1>
 
       <h1 class="text-xl md:text-4xl font-bold capitalize">
-        {{$t('hero.im')}}
+        {{ $t('hero.im') }}
         <TextType
-          :text="[$t('hero.job'),'']"
+          :text="[$t('hero.job'), '']"
           :typingSpeed="75"
           :pauseDuration="1500"
           :showCursor="true"
           cursorCharacter="|"
           :textColors="['#d74f11']"
-          class="inline-block whitespace-nowrap "
+          class="inline-block whitespace-nowrap"
         />
       </h1>
 
@@ -66,7 +63,6 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
       </a>
     </div>
   </div>
-
 </template>
 <style>
 .dot-grid-container {

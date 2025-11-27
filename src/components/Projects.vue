@@ -39,9 +39,7 @@ const projects = [
 
 <template>
   <section id="projects" class="bg-white p-5 md:p-10">
-    <h1
-      class="text-center uppercase text-3xl md:text-4xl font-bold py-10 tracking-wide"
-    >
+    <h1 class="text-center uppercase text-3xl md:text-4xl font-bold py-10 tracking-wide">
       {{ $t('projects.title') }}
     </h1>
 
@@ -54,7 +52,7 @@ const projects = [
     >
       <!-- IMAGE -->
       <div
-        class="border  overflow-hidden hover:shadow-[2px_2px_0px_rgba(0,0,0,0.8),4px_4px_0px_rgba(0,0,0,0.6)] transition-all duration-300"
+        class="border overflow-hidden hover:shadow-[2px_2px_0px_rgba(0,0,0,0.8),4px_4px_0px_rgba(0,0,0,0.6)] transition-all duration-300"
         :class="index % 2 === 0 ? 'order-first md:order-last' : 'md:order-first'"
       >
         <img
@@ -69,7 +67,7 @@ const projects = [
         <h2 class="text-3xl md:text-5xl mb-4 capitalize leading-tight">
           {{ $t(project.nameKey) }}
         </h2>
-        <p class="leading-relaxed  md:text-lg font-normal text-gray-700">
+        <p class="leading-relaxed md:text-lg font-normal text-gray-700">
           {{ $t(project.descKey) }}
         </p>
 
@@ -88,7 +86,9 @@ const projects = [
 [v-scroll-animate] {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 [v-scroll-animate].visible {
   opacity: 1;

@@ -1,8 +1,7 @@
-
 <script setup lang="ts">
 // No extra logic needed — this is a static view
 import NotFound from '@/assets/lottfiles/Error404.json'
-import { HomeIcon } from 'lucide-vue-next';
+import { HomeIcon } from 'lucide-vue-next'
 </script>
 
 <template>
@@ -12,7 +11,7 @@ import { HomeIcon } from 'lucide-vue-next';
       :src="NotFound"
       background="transparent"
       speed="1"
-      style="width: 500px; height: 500px;"
+      style="width: 500px; height: 500px"
       loop
       autoplay
     ></lottie-player>
@@ -21,13 +20,12 @@ import { HomeIcon } from 'lucide-vue-next';
 
     <RouterLink
       to="/"
-      class="mt-6 px-5 py-2 w-44  bg-orange text-white border border-black hover:bg-black hover:text-white  transition"
+      class="mt-6 px-5 py-2 w-44 bg-orange text-white border border-black hover:bg-black hover:text-white transition"
     >
       <div class="flex items-center justify-center">
-         <HomeIcon class="mr-2 w-5 h-5" /> 
-       {{ $t('notFound.back') }}
+        <HomeIcon class="mr-2 w-5 h-5" />
+        {{ $t('notFound.back') }}
       </div>
     </RouterLink>
   </div>
 </template>
-

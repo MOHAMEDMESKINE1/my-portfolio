@@ -74,5 +74,8 @@
     "title": "404",
     "description": "La page que vous cherchez n'existe pas.",
     "back": "Accueil"
+  },
+  "technologies": {
+    "title": "Technologies"
   }
 }
