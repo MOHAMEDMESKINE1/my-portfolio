@@ -6,33 +6,53 @@ const projects = [
     id: 1,
     nameKey: 'projects.poject1.name',
     descKey: 'projects.poject1.description',
-    img: new URL('../assets/platforms/marafiq.png', import.meta.url).href,
+    img: new URL('../assets/platforms/marafiq.webp', import.meta.url).href,
     link: 'https://marafiq.agadir.ma',
+    sizes: "(max-width: 768px) 370px, 740px",
+    width: "370",
+    height: "242",
+    alt: "Marafiq",
     delay: '.1s',
   },
   {
     id: 2,
     nameKey: 'projects.poject2.name',
     descKey: 'projects.poject2.description',
-    img: new URL('../assets/platforms/bureau_ordre.png', import.meta.url).href,
+    img: new URL('../assets/platforms/bureau_ordre.webp', import.meta.url).href,
     link: 'https://bo.e-agadir.ma',
     delay: '.2s',
+    sizes: "(max-width: 768px) 370px, 740px",
+    width: "370",
+    height: "242",
+    alt: "Marafiq",
+
   },
   {
     id: 3,
     nameKey: 'projects.poject3.name',
     descKey: 'projects.poject3.description',
-    img: new URL('../assets/platforms/dawarat.png', import.meta.url).href,
+    img: new URL('../assets/platforms/dawarat.webp', import.meta.url).href,
     link: 'https://dev-dawarat.e-agadir.ma',
     delay: '.3s',
+    sizes: "(max-width: 768px) 370px, 740px",
+    width: "370",
+    height: "242",
+    alt: "Marafiq",
+
   },
   {
     id: 4,
     nameKey: 'projects.poject4.name',
     descKey: 'projects.poject4.description',
-    img: new URL('../assets/platforms/pelicula.png', import.meta.url).href,
+    img: new URL('../assets/platforms/pelicula.webp', import.meta.url).href,
     link: 'https://pelicula-dun.vercel.app',
     delay: '.4s',
+    srcset: "marafiq-370w.webp 370w, marafiq-740w.webp 740w, marafiq-1110w.webp 1110w",
+    sizes: "(max-width: 768px) 370px, 740px",
+    width: "370",
+    height: "242",
+    alt: "Marafiq",
+
   },
 ]
 </script>
@@ -43,23 +63,16 @@ const projects = [
       {{ $t('projects.title') }}
     </h1>
 
-    <div
-      v-for="(project, index) in projects"
-      :key="project.id"
-      v-scroll-animate
+    <div v-for="(project, index) in projects" :key="project.id" v-scroll-animate
       class="transition-all grid md:grid-cols-2 items-center gap-6 md:gap-10 md:mb-16"
-      :style="{ transitionDelay: project.delay }"
-    >
+      :style="{ transitionDelay: project.delay }">
       <!-- IMAGE -->
       <div
         class="border overflow-hidden hover:shadow-[2px_2px_0px_rgba(0,0,0,0.8),4px_4px_0px_rgba(0,0,0,0.6)] transition-all duration-300"
-        :class="index % 2 === 0 ? 'order-first md:order-last' : 'md:order-first'"
-      >
-        <img
-          :src="project.img"
-          class="w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-300"
-          :alt="$t(project.nameKey)"
-        />
+        :class="index % 2 === 0 ? 'order-first md:order-last' : 'md:order-first'">
+        <img :src="project.img" class="w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-300"
+          :alt="$t(project.nameKey)" :sizes="project.sizes" :width="project.width" :height="project.height"
+          loading="lazy" />
       </div>
 
       <!-- TEXT -->
@@ -90,6 +103,7 @@ const projects = [
     opacity 0.6s ease,
     transform 0.6s ease;
 }
+
 [v-scroll-animate].visible {
   opacity: 1;
   transform: translateY(0);

@@ -48,16 +48,19 @@ const socialItems = [
     label: 'Github',
     link: 'https://github.com/MOHAMEDMESKINE1',
     icon: Github,
+    ariaLabel :'Visit my GitHub profile',
   },
   {
     label: 'Linkedin',
     link: 'https://www.linkedin.com/in/mohamed-meskine-173720180',
     icon: Linkedin,
+    ariaLabel:"Visit my Linkedin profile",
   },
   {
     label: 'Instagram',
     link: 'https://www.instagram.com/med_meskine1',
     icon: Instagram,
+    ariaLabel:"Visit my Instagram profile",
   },
 ]
 </script>
@@ -76,7 +79,9 @@ const socialItems = [
         <div class="flex md:order-2">
           <div class="mx-2 flex md:flex items-center hidden gap-4">
             <LangSwitcher class="hidden" />
-            <a v-for="item in socialItems" :key="item.label" :href="item.link" target="_blank">
+            <a v-for="item in socialItems" :key="item.label" :href="item.link"
+            :aria-label="item.ariaLabel"
+            target="_blank">
               <component :is="item.icon" class="w-4 h-4 md:w-5 md:h-5" />
             </a>
           </div>
@@ -90,7 +95,6 @@ const socialItems = [
             <span class="sr-only">Open main menu</span>
             <svg
               class="w-6 h-6"
-              aria-hidden="true"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -118,6 +122,7 @@ const socialItems = [
               <a
                 :href="`#${navItem.href}`"
                 class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:text-orange md:hover:bg-transparent md:hover:text-orange md:p-0"
+
               >
                 {{ $t(navItem.title) }}
               </a>

@@ -30,7 +30,7 @@ const techLogos = [
   },
   {
     node: 'https://lucide.dev/framework-logos/react.svg',
-    title: 'react',
+    title: 'react js',
     href: 'https://react.dev',
   },
   {
@@ -39,7 +39,7 @@ const techLogos = [
     href: 'https://vuejs.org',
   },
   {
-    node: 'https://svgstack.com/media/img/tailwindcss-logo-xM0R014051.webp',
+    node: 'https://tailwindcss.com/_next/static/media/tailwindcss-mark.d52e9897.svg',
     title: 'tailwind css',
     href: 'https://tailwindcss.com',
   },
@@ -49,7 +49,7 @@ const techLogos = [
     href: 'https://nuxt.com',
   },
   {
-    node: 'https://erfanevis.ir/wp-content/uploads/2024/08/shadcn-ui-logo.png',
+    node:   "https://images.seeklogo.com/logo-png/51/2/shadcn-ui-logo-png_seeklogo-519786.png",
     title: 'shadcn ui',
     href: 'https://ui.shadcn.com',
   },

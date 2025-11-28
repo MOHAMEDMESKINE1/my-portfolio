@@ -7,16 +7,19 @@ const socialItems = [
     label: 'Github',
     link: 'https://github.com/MOHAMEDMESKINE1',
     icon: Github,
+    ariaLabel :'Visit my GitHub profile',
   },
   {
     label: 'Linkedin',
     link: 'https://www.linkedin.com/in/mohamed-meskine-173720180',
     icon: Linkedin,
+    ariaLabel:"Visit my Linkedin profile",
   },
   {
     label: 'Instagram',
     link: 'https://www.instagram.com/med_meskine1',
     icon: Instagram,
+    ariaLabel:"Visit my Instagram profile",
   },
 ]
 const navItems = [
@@ -79,7 +82,7 @@ const navItems = [
         </p>
 
         <div class="flex gap-4">
-          <a v-for="item in socialItems" :key="item.label" :href="item.link" target="_blank">
+          <a v-for="item in socialItems" :key="item.label" :href="item.link" target="_blank" :aria-label="item.ariaLabel">
             <component :is="item.icon" class="w-5 h-5 hover:text-orange" />
           </a>
         </div>

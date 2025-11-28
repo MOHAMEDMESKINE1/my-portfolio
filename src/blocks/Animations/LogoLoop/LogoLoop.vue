@@ -3,75 +3,38 @@
 -->
 
 <template>
-  <div
-    ref="containerRef"
-    :class="rootClasses"
-    :style="containerStyle"
-    role="region"
-    :aria-label="ariaLabel"
-    @mouseenter="handleMouseEnter"
-    @mouseleave="handleMouseLeave"
-  >
+  <div ref="containerRef" :class="rootClasses" :style="containerStyle" role="region" :aria-label="ariaLabel"
+    @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
     <template v-if="fadeOut">
-      <div
-        aria-hidden
-        :class="[
-          'pointer-events-none absolute inset-y-0 left-0 z-[1]',
-          'w-[clamp(24px,8%,120px)]',
-          'bg-[linear-gradient(to_right,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]',
-        ]"
-      />
-      <div
-        aria-hidden
-        :class="[
-          'pointer-events-none absolute inset-y-0 right-0 z-[1]',
-          'w-[clamp(24px,8%,120px)]',
-          'bg-[linear-gradient(to_left,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]',
-        ]"
-      />
+      <div :class="[
+        'pointer-events-none absolute inset-y-0 left-0 z-[1]',
+        'w-[clamp(24px,8%,120px)]',
+        'bg-[linear-gradient(to_right,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]',
+      ]" />
+      <div :class="[
+        'pointer-events-none absolute inset-y-0 right-0 z-[1]',
+        'w-[clamp(24px,8%,120px)]',
+        'bg-[linear-gradient(to_left,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]',
+      ]" />
     </template>
 
-    <div
-      ref="trackRef"
-      :class="['flex w-max will-change-transform select-none ', 'motion-reduce:transform-none']"
-    >
-      <ul
-        v-for="copyIndex in copyCount"
-        :key="`copy-${copyIndex - 1}`"
-        class="flex items-center"
-        role="list"
-        :aria-hidden="copyIndex > 1"
-        :ref="
-          (el) => {
-            if (copyIndex === 1) seqRef = el as HTMLUListElement
-          }
-        "
-      >
-        <li
-          v-for="(item, itemIndex) in logos"
-          :key="`${copyIndex - 1}-${itemIndex}`"
-          :class="[
-            'flex-none  mr-[var(--logoloop-gap)] text-[length:var(--logoloop-logoHeight)] leading-[1]',
-            scaleOnHover && 'overflow-visible group/item',
-          ]"
-          role="listitem"
-        >
-          <a
-            v-if="item.href"
-            :class="[
-              'inline-flex items-center no-underline rounded',
-              'transition-opacity duration-200 ease-linear',
+    <div ref="trackRef" :class="['flex w-max will-change-transform select-none ', 'motion-reduce:transform-none']">
+      <ul v-for="copyIndex in copyCount" :key="`copy-${copyIndex - 1}`" class="flex items-center" :ref="(el) => {
+          if (copyIndex === 1) seqRef = el as HTMLUListElement
+        }
+        ">
+        <li v-for="(item, itemIndex) in logos" :key="`${copyIndex - 1}-${itemIndex}`" :class="[
+          'flex-none  mr-[var(--logoloop-gap)] text-[length:var(--logoloop-logoHeight)] leading-[1]',
+          scaleOnHover && 'overflow-visible group/item',
+        ]">
+          <a v-if="item.href" :class="[
+            'inline-flex items-center no-underline rounded',
+            'transition-opacity duration-200 ease-linear',
 
-              'hover:opacity-80',
-              'focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2',
-            ]"
-            :href="item.href"
-            :aria-label="getItemAriaLabel(item) || 'logo link'"
-            target="_blank"
-            rel="noreferrer noopener"
-            class=""
-            :title="item.title"
-          >
+            'hover:opacity-80',
+            'focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2',
+          ]" :href="item.href" :aria-label="getItemAriaLabel(item) || 'logo link'" target="_blank"
+            rel="noreferrer noopener" class="" :title="item.title">
             <LogoContent :item="item" :scale-on-hover="scaleOnHover" />
           </a>
           <LogoContent v-else :item="item" :scale-on-hover="scaleOnHover" />
@@ -398,7 +361,7 @@ const LogoContent = defineComponent({
       const baseClasses = [
         'inline-flex items-center',
         props.scaleOnHover &&
-          'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120',
+        'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120',
       ]
 
       if (isNodeItem(props.item)) {
@@ -414,7 +377,7 @@ const LogoContent = defineComponent({
               'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
               'logo-gray  ',
               props.scaleOnHover &&
-                'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120',
+              'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120',
             ],
           })
         }
@@ -431,10 +394,12 @@ const LogoContent = defineComponent({
         src: props.item.src,
         alt: props.item.alt || '',
         title: props.item.title || '',
+        loading: props.item.lcp ? 'eager' : 'lazy',
+        fetchpriority: props.item.lcp ? 'high' : undefined,
         class: [
           'h-[var(--logoloop-logoHeight)] w-auto object-contain',
           props.scaleOnHover &&
-            'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120',
+          'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120',
         ],
       })
     }

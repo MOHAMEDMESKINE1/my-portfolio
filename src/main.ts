@@ -20,4 +20,7 @@ const i18n = createI18n({
 app.use(router)
 app.use(i18n)
 app.directive('scroll-animate', scrollAnimation)
+
+
+
 app.mount('#app')

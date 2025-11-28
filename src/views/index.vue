@@ -26,9 +26,10 @@ onMounted(() => {
 <template>
   <div>
     <!-- Loader Screen -->
-    <div v-if="loading">
+    <div v-if="loading" >
       <transition name="fade">
         <div
+          v-if="loading"
           class="fixed inset-0 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-50"
         >
           <!-- <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_usmfx6bp.json" background="transparent"
