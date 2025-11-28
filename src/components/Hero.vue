@@ -16,7 +16,7 @@ import DotGrid from '@/blocks/Backgrounds/DotGrid/DotGrid.vue'
 
     <!-- Image -->
     <div class="order-1 md:order-2 mx-auto max-w-sm sm:max-w-sm flex justify-center relative z-10">
-      <img src="/my-portfolio/src/assets/me.webp"
+      <img src="../assets/me.webp"
         class="mt-20 md:w-[400px] bg-orange border-5 border-black object-cover rounded-full" alt="profile" width="400"
         height="400" fetchpriority="high" />
 
