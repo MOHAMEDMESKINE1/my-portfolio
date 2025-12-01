@@ -20,8 +20,8 @@
 
     <div ref="trackRef" :class="['flex w-max will-change-transform select-none ', 'motion-reduce:transform-none']">
       <ul v-for="copyIndex in copyCount" :key="`copy-${copyIndex - 1}`" class="flex items-center" :ref="(el) => {
-          if (copyIndex === 1) seqRef = el as HTMLUListElement
-        }
+        if (copyIndex === 1) seqRef = el as HTMLUListElement
+      }
         ">
         <li v-for="(item, itemIndex) in logos" :key="`${copyIndex - 1}-${itemIndex}`" :class="[
           'flex-none  mr-[var(--logoloop-gap)] text-[length:var(--logoloop-logoHeight)] leading-[1]',
@@ -351,7 +351,7 @@ const LogoContent = defineComponent({
     scaleOnHover: Boolean,
   },
   setup(props) {
-    const isNodeItem = (item) => 'node' in item
+    const isNodeItem = (item: { node?: unknown }) => 'node' in item
 
     const isImageUrl = (value: string) => {
       return typeof value === 'string' && /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(value)

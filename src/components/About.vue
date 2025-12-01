@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import CountUp from '@/blocks/Animations/CountUp/CountUp.vue'
-// import about from '@/assets/svgs/about.svg';
 import about from '@/assets/lottfiles/about.json'
-import Loader from './ui/Loader.vue'
 </script>
 
 <template>

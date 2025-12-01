@@ -72,19 +72,25 @@ const clearTimeoutIfNeeded = () => {
 }
 
 const executeTypingAnimation = () => {
-  const currentText = textArray.value[currentTextIndex.value]
-  const processedText = props.reverseMode ? currentText.split('').reverse().join('') : currentText
+  const currentText = textArray.value[currentTextIndex.value] ?? ''
+  const processedText: string = props.reverseMode
+    ? currentText.split('').reverse().join('')
+    : currentText
 
   if (isDeleting.value) {
     if (displayedText.value === '') {
       isDeleting.value = false
       if (currentTextIndex.value === textArray.value.length - 1 && !props.loop) return
 
-      props.onSentenceComplete?.(textArray.value[currentTextIndex.value], currentTextIndex.value)
+      props.onSentenceComplete?.(
+        textArray.value[currentTextIndex.value] ?? '',
+        currentTextIndex.value
+      )
+
 
       currentTextIndex.value = (currentTextIndex.value + 1) % textArray.value.length
       currentCharIndex.value = 0
-      timeout = setTimeout(() => {}, props.pauseDuration)
+      timeout = setTimeout(() => { }, props.pauseDuration)
     } else {
       timeout = setTimeout(() => {
         displayedText.value = displayedText.value.slice(0, -1)
@@ -158,26 +164,22 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <component
-    :is="as"
-    ref="containerRef"
-    :class="`inline-block whitespace-pre-wrap tracking-tight ${className}`"
-    v-bind="$attrs"
-  >
+  <component :is="as" ref="containerRef" :class="`inline-block whitespace-pre-wrap tracking-tight ${className}`"
+    v-bind="$attrs">
     <span class="inline" :style="{ color: getCurrentTextColor() }">
       {{ displayedText }}
     </span>
-    <span
-      v-if="showCursor"
-      ref="cursorRef"
-      :class="`ml-1 inline-block opacity-100 ${
-        hideCursorWhileTyping &&
-        (currentCharIndex < textArray[currentTextIndex].length || isDeleting)
-          ? 'hidden'
-          : ''
-      } ${cursorClassName}`"
-    >
+    <span v-if="showCursor" ref="cursorRef" :class="`
+    ml-1 inline-block opacity-100
+    ${hideCursorWhileTyping &&
+        (currentCharIndex < (textArray[currentTextIndex] ?? '').length || isDeleting)
+        ? 'hidden'
+        : ''
+      }
+    ${cursorClassName}
+  `">
       {{ cursorCharacter }}
     </span>
+
   </component>
 </template>

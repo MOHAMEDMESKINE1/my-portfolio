@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Card from './ui/Card.vue'
+import Card from '@/components/ui/Card.vue'
 import { LaptopMinimal, Code } from 'lucide-vue-next'
 
 const cards = [

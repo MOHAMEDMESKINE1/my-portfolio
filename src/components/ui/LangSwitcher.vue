@@ -47,7 +47,11 @@ function onKeydown(e: KeyboardEvent) {
     focusedIndex.value = Math.max(focusedIndex.value - 1, 0)
   } else if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault()
-    if (focusedIndex.value >= 0) selectLocale(options[focusedIndex.value].code)
+    if (focusedIndex.value >= 0) {
+      const option = options[focusedIndex.value]
+      if (option) selectLocale(option.code)
+    }
+
   } else if (e.key === 'Escape') {
     open.value = false
   }
@@ -57,13 +61,8 @@ function onKeydown(e: KeyboardEvent) {
 <template>
   <div class="relative inline-block text-left" @keydown.stop.prevent="onKeydown">
     <!-- Toggle Button -->
-    <button
-      type="button"
-      @click="toggle"
-      :aria-expanded="open"
-      aria-haspopup="menu"
-      class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border shadow-sm hover:shadow focus:outline-none bg-white text-sm"
-    >
+    <button type="button" @click="toggle" :aria-expanded="open" aria-haspopup="menu"
+      class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border shadow-sm hover:shadow focus:outline-none bg-white text-sm">
       <Globe class="w-5 h-5" />
       <span class="min-w-[64px] text-left">
         <!-- show flag + label for current locale -->
@@ -79,25 +78,15 @@ function onKeydown(e: KeyboardEvent) {
 
     <!-- Dropdown -->
     <transition name="fade">
-      <div
-        v-if="open"
-        role="menu"
-        class="origin-top-right absolute right-0 mt-2 w-44 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
-      >
+      <div v-if="open" role="menu"
+        class="origin-top-right absolute right-0 mt-2 w-44 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
         <div class="py-1">
-          <button
-            v-for="(opt, idx) in options"
-            :key="opt.code"
-            @click="selectLocale(opt.code)"
-            @mouseenter="focusedIndex = idx"
-            :class="[
+          <button v-for="(opt, idx) in options" :key="opt.code" @click="selectLocale(opt.code)"
+            @mouseenter="focusedIndex = idx" :class="[
               'w-full text-left px-3 py-2 text-sm flex items-center justify-between gap-2',
               opt.code === locale ? 'font-semibold' : 'font-normal',
               focusedIndex === idx ? 'bg-gray-100' : '',
-            ]"
-            role="menuitem"
-            :aria-current="opt.code === locale ? 'true' : 'false'"
-          >
+            ]" role="menuitem" :aria-current="opt.code === locale ? 'true' : 'false'">
             <div class="flex items-center gap-2">
               <span class="text-xs">{{ opt.flag }}</span>
               <span>{{ opt.label }}</span>
@@ -119,6 +108,7 @@ function onKeydown(e: KeyboardEvent) {
 .fade-leave-active {
   transition: opacity 0.15s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
